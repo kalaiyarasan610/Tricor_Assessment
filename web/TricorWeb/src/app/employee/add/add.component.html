@@ -1,0 +1,53 @@
+<div class="container">
+<a routerLink="">Go to home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a routerLink="../employeelist">Employee List</a>
+<h4>{{pageTitle}} Employee</h4>
+      <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" id="firstname"
+                 required
+                 [(ngModel)]="model.firstname" name="firstname"
+                 #firstname="ngModel">
+          <!-- <div [hidden]="firstname.valid || firstname.pristine"
+               class="alert alert-danger">
+            First Name is required
+          </div> -->
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname"
+                   required
+                   [(ngModel)]="model.lastname" name="lastname"
+                   #lastname="ngModel">           
+          </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender"
+                  required
+                  [(ngModel)]="model.gender" name="gender"
+                  #gender="ngModel">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age"
+                   required
+                   [(ngModel)]="model.age" name="age"
+                   #age="ngModel">           
+          </div>
+          <div class="form-group">
+              <label for="joineddate">Joined Date</label>
+              <input type="date" class="form-control" id="joineddate"
+                     required
+                     [(ngModel)]="model.joineddate" name="joineddate"
+                     #joineddate="ngModel">           
+            </div>
+        <button type="submit" class="btn btn-success" [disabled]="!employeeForm.form.valid">{{pageTitle}}</button>
+        <!-- <button type="button" class="btn btn-default" (click)="newemployee(); employeeForm.reset()">Reset</button> -->
+      </form>
+    </div>
+  

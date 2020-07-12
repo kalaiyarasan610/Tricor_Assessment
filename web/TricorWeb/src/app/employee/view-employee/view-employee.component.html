@@ -1,0 +1,8 @@
+<h3>Employee details</h3>
+
+<p *ngIf="selectedEmpFlag">{{viewemployee.firstname}}, {{viewemployee.lastname}} ({{viewemployee.gender}}, 
+    {{viewemployee.age}} years) was joined on {{viewemployee.joineddate | date : 'dd-MM-yyyy'}}.</p>
+
+<p *ngIf="!selectedEmpFlag">No Employee selected.</p>
+
+<a routerLink="../employeelist">Employee List</a>
